@@ -1,0 +1,79 @@
+{
+  "name": "dsh-company-multiagent",
+  "displayName": "DSH 四级智能体集团总控台",
+  "version": "1.1.0",
+  "description": "Four-tier multi-agent company orchestration plugin & Web GUI console for DeepSeek Harness (DSH): coordinates Codex (gpt-6.1-sol/astra), Qoder, WorkBuddy, and Doubao (doubao-expert) with live agent balance monitoring and multi-layer isomorphic subagent reviews.",
+  "icon": "icon.svg",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./v4": {
+      "default": "./v4/lib/index.js"
+    },
+    "./preset-tools": {
+      "default": "./lib/preset-tools.js"
+    },
+    "./sdk": "./src/index.js",
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "bin",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "bin": {
+    "dsh-company": "./bin/dsh-company.js",
+    "dsh-company-mcp": "./bin/mcp-server.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start:mcp": "node ./bin/mcp-server.js",
+    "cli": "node ./bin/dsh-company.js"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0-rc.0"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.0-rc.0"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.4"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "multi-agent",
+    "codex",
+    "qoder",
+    "workbuddy",
+    "doubao",
+    "mcp"
+  ],
+  "license": "MIT"
+}

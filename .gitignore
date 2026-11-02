@@ -1,0 +1,76 @@
+# ============================================================================
+# Node.js Dependencies & Package Managers
+# ============================================================================
+node_modules/
+jspm_packages/
+.npm/
+.pnpm-store/
+.yarn/
+*.tgz
+*.tsbuildinfo
+
+# ============================================================================
+# macOS, Windows & Linux OS Metadata
+# ============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ============================================================================
+# IDE, Editor & Local AI Agent Directories
+# ============================================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.agents/
+.gemini/
+.claude/
+.cursor/
+
+# ============================================================================
+# Environment Variables, Credentials & Local Auth Tokens (DO NOT COMMIT)
+# ============================================================================
+.env
+.env.*
+!.env.example
+.credentials.yaml
+*.pem
+*.key
+.qoder-auth*.json
+auth.json
+
+# ============================================================================
+# DSH & Multi-Agent Runtime State, Sandboxes & Telemetry Caches
+# ============================================================================
+.dsh/
+.dsh-company/
+.dsh-company-sandboxes/
+runs-history.json
+model-config.json
+qoder-usage.json
+doubao-usage.json
+.qoder-token-count.*.json
+.qoder-request-count.*.json
+dsh-codex-last-*.txt
+
+# ============================================================================
+# Logs, Coverage & Temporary Build Artifacts
+# ============================================================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+dist/
+build/
+tmp/
+temp/
